@@ -8,6 +8,8 @@ const db = new sqlite.Database(filebuffer);
 
 const app = express();
 
+console.log('Starting server');
+
 app.set("port", process.env.PORT || 3001);
 
 // Express only serves static assets in production
@@ -24,6 +26,7 @@ const COLUMNS = [
   "kcal",
   "description"
 ];
+
 app.get("/api/food", (req, res) => {
   const param = req.query.q;
 
